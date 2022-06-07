@@ -30,6 +30,7 @@ try{
 	pstmt.setString(1, name);
 	pstmt.setString(2, memo);	
 	pstmt.executeUpdate();
+	
 }catch(Exception e){
 	e.printStackTrace();
 }finally{

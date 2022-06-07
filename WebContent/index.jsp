@@ -45,7 +45,7 @@
 	String sql = "select * from memo";
 	PreparedStatement pstmt = con.prepareStatement(sql);
 	ResultSet rs = pstmt.executeQuery(sql);
-
+	int id = 0;
 	%>
 	<table border="1">
 		<tr>
@@ -53,18 +53,26 @@
 			<th>이름</th>
 			<th>메모</th>
 			<th>날짜</th>
+			<th>삭제</th>
 		</tr>
 		<%
 		while (rs.next()) {
 		%>
 		<tr>
+			<form action="delete.jsp" method="post">
 			<td><%=rs.getInt("id")%></td>
+			<%=id = rs.getInt("id")%>
 			<td><%=rs.getString("name")%></td>
 			<td><%=rs.getString("memo")%></td>
 			<td><%=rs.getDate("day")%></td>
+			<td><input type="submit" value="삭제"></td>
+			</form>
 		</tr>
 		<%
 		}
+		con.close();
+		rs.close();
+		pstmt.close();
 		%>
 	</table>
 </div>
