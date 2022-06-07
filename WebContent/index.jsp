@@ -8,15 +8,18 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
+<center>
 <div>
-메모장
+<div>
+<h1>메모장</h1>
 </div>
 <form action="add.jsp" method="post">
-<div>
+<div >
 <table border="1">
 <tr>
 <td>이름</td>
@@ -29,7 +32,10 @@
 </table>
 </div>
 </form>
-<div>
+<div >
+<br>
+<br>
+<br>
 <%
 	String url = "jdbc:oracle:thin:@localhost:1521:XE";
 	String uid = "example01";
@@ -62,5 +68,7 @@
 		%>
 	</table>
 </div>
+</div>
+</center>
 </body>
 </html>
